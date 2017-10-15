@@ -507,8 +507,11 @@ endif
 "" Convenience variables
 "*****************************************************************************
 " vim-airline
-au BufNewFile,BufRead *.cu set ft=cuda
-au BufNewFile,BufRead *.cuh set ft=cuda
+"
+autocmd BufNewFile,BufRead *.cu set filetype=cpp
+autocmd BufNewFile,BufRead *.cuh set filetype=cpp
+"au BufNewFile,BufRead *.cu set ft=c
+"au BufNewFile,BufRead *.cuh set ft=c
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
