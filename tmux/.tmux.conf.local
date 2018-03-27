@@ -257,7 +257,8 @@ bind -n M-[ previous-window \; refresh-client -S
 bind -n M-] next-window \; refresh-client -S
 bind -n M-9 switch-client -p \; refresh-client -S
 bind -n M-0 switch-client -n \; refresh-client -S
-
+set-option -gw xterm-keys on
+bind -n C-Right send-keys C-Right
 
 
 # start with mouse mode enabled
