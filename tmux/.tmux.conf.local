@@ -106,7 +106,7 @@ tmux_conf_theme_window_status_format='#I #W'
 tmux_conf_theme_window_status_current_fg='#000000'      # black
 tmux_conf_theme_window_status_current_bg='#00afff'      # light blue
 tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I #W:#P'
+tmux_conf_theme_window_status_current_format='#I  #W:#P'
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
@@ -247,10 +247,10 @@ tmux_conf_copy_to_os_clipboard=false
 
 # increase history size
 set -g history-limit 10000
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
+#bind -n M-Left select-pane -L
+#bind -n M-Right select-pane -R
+#bind -n M-Up select-pane -U
+#bind -n M-Down select-pane -D
 
 
 bind -n M-[ previous-window \; refresh-client -S
@@ -260,7 +260,18 @@ bind -n M-0 switch-client -n \; refresh-client -S
 set-option -gw xterm-keys on
 bind -n C-Right send-keys C-Right
 
-
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+bind-key -n M-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
+bind-key -n M-j if-shell "$is_vim" "send-keys C-j"  "select-pane -D"
+bind-key -n M-k if-shell "$is_vim" "send-keys C-k"  "select-pane -U"
+bind-key -n M-l if-shell "$is_vim" "send-keys C-l"  "select-pane -R"
+bind-key -n M-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
+bind-key -T copy-mode-vi M-Left select-pane -L
+bind-key -T copy-mode-vi M-Down select-pane -D
+bind-key -T copy-mode-vi M-up select-pane -U
+bind-key -T copy-mode-vi M-Right select-pane -R
+bind-key -T copy-mode-vi M-\ select-pane -l
 # start with mouse mode enabled
 #set -g mouse on
 
@@ -277,4 +288,4 @@ bind -n C-Right send-keys C-Right
 # bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position bottom 
