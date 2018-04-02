@@ -516,7 +516,8 @@ autocmd BufNewFile,BufRead *.cuh set filetype=cpp
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+" inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+imap jj <Esc>
 smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
