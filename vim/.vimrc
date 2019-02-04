@@ -133,7 +133,7 @@ set backspace=indent,eol,start
 
 "" Tabs. May be overriten by autocmd rules
 set tabstop=4
-set softtabstop=0
+" set softtabstop=0
 set shiftwidth=4
 set expandtab
 
@@ -465,8 +465,10 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "*****************************************************************************
 
 " c
-autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType c setlocal tabstop=8 shiftwidth=8 colorcolumn=79 noexpandtab
+"autocmd FileType h setlocal tabstop=8 shiftwidth=8 noexpandtab colorcolumn=79
+autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 colorcolumn=79 noexpandtab
+"autocmd FileType hpp setlocal tabstop=8 shiftwidth=8 noexpandtab colorcolumn=79
 
 
 " php
