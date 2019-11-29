@@ -158,7 +158,7 @@ tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
-tmux_conf_theme_status_right=' #{prefix}#{pairing} | %R , %d-%m-%Y | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_right=' #{prefix} | %R , %d-%m-%Y | #{username}#{root} | #{hostname} '
 #tmux_conf_theme_status_right=' #{prefix}#{pairing} | 📅 #(gcalcli --nostarted --calendar shai"" agenda --nocolor | cut -d " " -f 4- | head -2 | tail -1 | sed "s/^ *//g" | sed "s/    / /g" | cut -c1-29)  | %R , %d-%m-%Y | #{username}#{root} | #{hostname} '
 
 # status left style
@@ -293,3 +293,4 @@ run-shell ~/dotfiles/tmux-resurrect/resurrect.tmux
 
 # move status line to top
 set -g status-position bottom 
+setw -g mode-keys vi

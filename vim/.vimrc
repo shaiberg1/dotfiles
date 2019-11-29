@@ -737,3 +737,4 @@ let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 " Don't select first item in pop-up menu
 let OmniCpp_SelectFirstItem = 0
+set cino=g0
