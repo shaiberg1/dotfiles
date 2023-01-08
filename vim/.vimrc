@@ -44,7 +44,7 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'Raimondi/delimitMate'
-Plug 'vim-scripts/Conque-GDB'           " gdp"
+" Plug 'vim-scripts/Conque-GDB'           " gdp"
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
